@@ -4,18 +4,25 @@ using System.Reflection;
 
 namespace YeetDebris
 {
-
-    [Plugin(RuntimeOptions.SingleStartInit)]
+    [Plugin(RuntimeOptions.DynamicInit)]
     public class Plugin
     {
-        internal static Plugin instance { get; private set; }
-        internal static string Name => "YeetDebris";
+        private const string HarmonyID = "com.steven.yeet.debris";
 
-        [Init]
-        public void Init()
+        private Harmony? _harmonyInstance;
+
+        [OnEnable]
+        public void OnEnable()
         {
-            instance = this;
-            new Harmony("com.steven.yeet.debris").PatchAll(Assembly.GetExecutingAssembly());
+            _harmonyInstance = new Harmony(HarmonyID);
+            _harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
+        }
+
+        [OnDisable]
+        public void OnDisable()
+        {
+            _harmonyInstance?.UnpatchAll(HarmonyID);
+            _harmonyInstance = null;
         }
     }
 }
