@@ -1,5 +1,5 @@
 ﻿{
-  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
   "id": "YeetDebris",
   "name": "YeetDebris",
   "author": "Steven 🎀",
@@ -7,7 +7,7 @@
   "description": "Changes the behavior of the 'Reduce Debris' option to be like it was before 1.8.x",
   "gameVersion": "1.11.1",
   "dependsOn": {
-    "BS Utils": "^1.4.11"
-  },
-  "features": []
+    "BSIPA": "^4.0.0",
+    "BS Utils": "^1.6.5"
+  }
 }

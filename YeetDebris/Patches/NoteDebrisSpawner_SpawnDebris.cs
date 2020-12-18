@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace YeetDebris
+namespace YeetDebris.Patches
 {
     [HarmonyPatch(typeof(NoteDebrisSpawner))]
     [HarmonyPatch("SpawnDebris")]
